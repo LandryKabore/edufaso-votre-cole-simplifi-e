@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 
-const SUPABASE_URL = "https://uszmpknbnpsenoahivkf.supabase.co";
+const SUPABASE_URL = "https://hbfjtsxzueftoiryzhxh.supabase.co";
 const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVzem1wa25ibnBzZW5vYWhpdmtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1Njg1NzIsImV4cCI6MjA5OTE0NDU3Mn0.FNd98h-yZ-ftSeUqOvlqOJfQIcagthOUHXDgF3vKt6Q";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhiZmp0c3h6dWVmdG9pcnl6aHhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNDk3MzMsImV4cCI6MjA5OTcyNTczM30.73yYUv5M5WpTzxDGm3KcLAtrsUDuv9SzOkYtwfYpfS4";
 
 const ROLE_LABELS: Record<string, string> = {
   school_admin: "Administrateur d'école",
