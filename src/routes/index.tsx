@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-school.jpg";
 
-// Placeholders — remplacez par les vraies URLs
-const APP_URL = "#"; // TODO: remplacer par l'URL de l'application
-const APK_URL = ""; // TODO: remplacer par l'URL de téléchargement de l'APK (laisser vide pour "Bientôt disponible")
+// Application EduFaso (repo educationconnect → GitHub Pages)
+const APP_URL = "https://landrykabore.github.io/educationconnect/connexion";
+// APK Android : laisser vide = "Bientôt disponible" jusqu'à hébergement du fichier
+const APK_URL = "";
 
 export const Route = createFileRoute("/")({
   component: Index,
