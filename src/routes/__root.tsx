@@ -87,10 +87,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Gérez présences, notes, bulletins et communication école–famille. Multi-écoles, simple et accessible sur téléphone.",
+          "EduFaso, le système de gestion scolaire pensé pour le Burkina Faso : présences, notes, bulletins et communication parents–enseignants, accessible depuis un téléphone.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "EduFaso — Système de gestion scolaire" },
+      { name: "twitter:description", content: "EduFaso, le système de gestion scolaire pensé pour le Burkina Faso : présences, notes, bulletins et communication parents–enseignants, accessible depuis un téléphone." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5b311d3f-674a-4f6c-aa6a-c8ed066ecf92/id-preview-b5e36008--9216d939-294e-4a6f-ba93-e8cf759a5bed.lovable.app-1784147718838.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5b311d3f-674a-4f6c-aa6a-c8ed066ecf92/id-preview-b5e36008--9216d939-294e-4a6f-ba93-e8cf759a5bed.lovable.app-1784147718838.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
