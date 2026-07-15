@@ -8,13 +8,6 @@ const APK_URL = ""; // TODO: remplacer par l'URL de téléchargement de l'APK (l
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    meta: [
-      {
-        property: "og:image",
-        content:
-          "https://id-preview--9216d939-294e-4a6f-ba93-e8cf759a5bed.lovable.app/og-image.jpg",
-      },
-    ],
     links: [{ rel: "canonical", href: "/" }],
   }),
 });
