@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-school.jpg";
 
-// Application EduFaso (repo educationconnect → GitHub Pages)
-const APP_URL = "https://landrykabore.github.io/educationconnect/connexion";
-// APK Android : laisser vide = "Bientôt disponible" jusqu'à hébergement du fichier
-const APK_URL = "";
+/** Installateurs ordinateur — Windows prêt ; Mac bientôt (build sur Mac). */
+const WIN_DOWNLOAD_URL =
+  "https://github.com/LandryKabore/educationconnect/raw/main/downloads/EduFaso-Setup-1.0.0.exe";
+const MAC_DOWNLOAD_URL = ""; // .dmg bientôt
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,10 +24,10 @@ function Header() {
           </span>
         </a>
         <a
-          href={APP_URL}
+          href="#telecharger"
           className="inline-flex items-center rounded-full bg-primary text-primary-foreground px-4 h-9 text-sm font-medium hover:bg-primary/90 transition-colors"
         >
-          Ouvrir l'app
+          Télécharger
         </a>
       </div>
     </header>
@@ -60,22 +60,16 @@ function Hero() {
               Système de gestion scolaire pour le Burkina Faso.
             </p>
             <p className="animate-fade-up delay-300 mt-4 max-w-xl text-cream/80 text-base sm:text-lg">
-              Présences, notes, bulletins et communication école–famille — dans une seule
-              application, accessible depuis n'importe quel téléphone.
+              Présences, notes, bulletins et communication école–famille — sur ordinateur
+              (Windows et Mac). Applications mobiles plus tard (App Store / Google Play).
             </p>
             <div className="animate-fade-up delay-500 mt-10 flex flex-wrap items-center gap-3">
               <a
-                href={APP_URL}
+                href="#telecharger"
                 className="group inline-flex items-center gap-2 rounded-full bg-cream text-slate-ink px-7 h-13 py-4 text-base font-semibold hover:bg-cream/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-slate-ink/20"
               >
-                Ouvrir l'application
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
-              <a
-                href="#installer"
-                className="inline-flex items-center gap-2 rounded-full border border-cream/50 text-cream px-7 py-4 text-base font-medium hover:bg-cream/10 transition-colors"
-              >
-                Comment installer
+                Télécharger pour ordinateur
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">↓</span>
               </a>
             </div>
           </div>
@@ -177,79 +171,91 @@ function Features() {
 
 function Installer() {
   return (
-    <section id="installer" className="py-24 sm:py-32 bg-background">
+    <section id="telecharger" className="py-24 sm:py-32 bg-background">
       <div className="mx-auto max-w-6xl px-5">
-        <div className="max-w-2xl mb-16">
-          <p className="text-terracotta text-sm font-semibold tracking-widest uppercase mb-4">
-            Installer l'app
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <p className="inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-widest uppercase text-primary mb-5">
+            Version 1.0.0
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground">
-            Deux façons d'installer EduFaso.
+            Télécharger EduFaso
           </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Installez sur l'ordinateur de l'école. Windows disponible maintenant — Mac bientôt.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* PWA */}
-          <div className="rounded-2xl bg-secondary/60 p-8 sm:p-10">
-            <div className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">
-              Option 1 · Application web
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Mac */}
+          <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+            <div className="text-3xl mb-4" aria-hidden>
+              
             </div>
-            <h3 className="font-display text-2xl font-bold mb-6 text-foreground">
-              Ajouter à l'écran d'accueil
+            <h3 className="font-display text-xl font-bold text-foreground mb-2">
+              Mac — application bureau
             </h3>
-
-            <div className="space-y-6">
-              <div>
-                <div className="text-sm font-semibold text-foreground mb-2">Sur Android (Chrome)</div>
-                <ol className="text-muted-foreground space-y-1 text-sm list-decimal list-inside">
-                  <li>Ouvrez l'application dans Chrome</li>
-                  <li>Appuyez sur le menu ⋮ en haut à droite</li>
-                  <li>Choisissez « Ajouter à l'écran d'accueil »</li>
-                </ol>
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-foreground mb-2">Sur iPhone (Safari)</div>
-                <ol className="text-muted-foreground space-y-1 text-sm list-decimal list-inside">
-                  <li>Ouvrez l'application dans Safari</li>
-                  <li>Appuyez sur l'icône Partager <span aria-hidden>⤴</span></li>
-                  <li>Choisissez « Sur l'écran d'accueil »</li>
-                </ol>
-              </div>
-            </div>
-
-            <a
-              href={APP_URL}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Ouvrir l'application <span aria-hidden>→</span>
-            </a>
+            <ul className="text-sm text-muted-foreground space-y-1 mb-8">
+              <li>macOS 12 ou plus</li>
+              <li>Apple Silicon et Intel</li>
+            </ul>
+            {MAC_DOWNLOAD_URL ? (
+              <a
+                href={MAC_DOWNLOAD_URL}
+                download
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-3.5 text-sm font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Télécharger pour Mac (.dmg)
+              </a>
+            ) : (
+              <span className="inline-flex w-full items-center justify-center rounded-xl border border-dashed border-border px-5 py-3.5 text-sm font-medium text-muted-foreground">
+                Bientôt disponible (.dmg)
+              </span>
+            )}
           </div>
 
-          {/* APK */}
-          <div className="rounded-2xl bg-slate-ink text-cream p-8 sm:p-10 relative overflow-hidden">
-            <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-terracotta/30 blur-3xl" aria-hidden />
-            <div className="relative">
-              <div className="text-xs font-semibold tracking-widest uppercase text-cream/70 mb-3">
-                Option 2 · Android APK
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-4">Télécharger l'APK</h3>
-              <p className="text-cream/70 text-sm leading-relaxed mb-8">
-                Installez EduFaso directement sur un téléphone Android, sans passer par le Play Store.
-                Autorisez l'installation depuis des sources inconnues si demandé.
-              </p>
-              {APK_URL ? (
-                <a
-                  href={APK_URL}
-                  className="inline-flex items-center gap-2 rounded-full bg-cream text-slate-ink px-6 py-3 text-sm font-semibold hover:bg-cream/90 transition-colors"
-                >
-                  Télécharger l'APK <span aria-hidden>↓</span>
-                </a>
-              ) : (
-                <span className="inline-flex items-center gap-2 rounded-full border border-cream/30 text-cream/80 px-6 py-3 text-sm font-medium">
-                  Bientôt disponible
-                </span>
-              )}
+          {/* Windows */}
+          <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+            <div className="text-3xl mb-4" aria-hidden>
+              ⊞
             </div>
+            <h3 className="font-display text-xl font-bold text-foreground mb-2">
+              Windows — application bureau
+            </h3>
+            <ul className="text-sm text-muted-foreground space-y-1 mb-8">
+              <li>Windows 10 ou plus</li>
+              <li>64 bits</li>
+            </ul>
+            <a
+              href={WIN_DOWNLOAD_URL}
+              download="EduFaso-Setup-1.0.0.exe"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-3.5 text-sm font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Télécharger pour Windows (.exe)
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-2 text-xs text-muted-foreground">
+          <span className="rounded-full bg-secondary px-3 py-1">Dernière version : 1.0.0</span>
+          <span className="rounded-full bg-secondary px-3 py-1">Ordinateur seulement</span>
+          <span className="rounded-full bg-secondary px-3 py-1">Mobile plus tard</span>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-2 gap-10 max-w-4xl mx-auto text-sm">
+          <div>
+            <h4 className="font-semibold text-foreground mb-3">Installer sur Windows</h4>
+            <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
+              <li>Cliquez sur « Télécharger pour Windows »</li>
+              <li>Ouvrez le fichier <code className="text-foreground">EduFaso-Setup.exe</code></li>
+              <li>Suivez l'assistant d'installation</li>
+            </ol>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-3">Installer sur Mac</h4>
+            <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
+              <li>Le fichier .dmg sera bientôt disponible</li>
+              <li>Ensuite : ouvrir le .dmg et glisser EduFaso dans Applications</li>
+            </ol>
           </div>
         </div>
       </div>
