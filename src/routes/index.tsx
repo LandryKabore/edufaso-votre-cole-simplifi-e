@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-school.jpg";
 
 /** Installateurs ordinateur — Windows prêt ; Mac bientôt (build sur Mac). */
 const WIN_DOWNLOAD_URL =
-  "https://github.com/LandryKabore/educationconnect/raw/main/downloads/EduFaso-Setup-1.0.0.exe";
+  "https://github.com/LandryKabore/educationconnect/raw/main/downloads/EduFaso-Setup-1.0.1.exe";
 const MAC_DOWNLOAD_URL = ""; // .dmg bientôt
 
 export const Route = createFileRoute("/")({
@@ -175,7 +175,7 @@ function Installer() {
       <div className="mx-auto max-w-6xl px-5">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-widest uppercase text-primary mb-5">
-            Version 1.0.0
+            Version 1.0.1
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground">
             Télécharger EduFaso
@@ -227,7 +227,7 @@ function Installer() {
             </ul>
             <a
               href={WIN_DOWNLOAD_URL}
-              download="EduFaso-Setup-1.0.0.exe"
+              download="EduFaso-Setup-1.0.1.exe"
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-3.5 text-sm font-semibold hover:bg-primary/90 transition-colors"
             >
               Télécharger pour Windows (.exe)
@@ -236,7 +236,7 @@ function Installer() {
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-2 text-xs text-muted-foreground">
-          <span className="rounded-full bg-secondary px-3 py-1">Dernière version : 1.0.0</span>
+          <span className="rounded-full bg-secondary px-3 py-1">Dernière version : 1.0.1</span>
           <span className="rounded-full bg-secondary px-3 py-1">Ordinateur seulement</span>
           <span className="rounded-full bg-secondary px-3 py-1">Mobile plus tard</span>
         </div>
